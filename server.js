@@ -31,6 +31,20 @@ mongoose.connect(
     }
     );
 
+    const MongoClient = require('mongodb').MongoClient;
+    const uri = "mongodb+srv://samantha:Charlie27@cluster0.jrk69.mongodb.net/workouts_db?retryWrites=true&w=majority";
+    const client = new MongoClient(uri, { useNewUrlParser: true });
+    client.connect(err => {
+        const collection = client.db("test").collection("devices");
+      // perform actions on the collection object
+        client.close();
+    });
+
+
+
+
+
+
 // Routes
 app.use(require("./routes/api"))
 app.use(require("./routes/view"))
@@ -39,3 +53,4 @@ app.use(require("./routes/view"))
 app.listen(process.env.PORT || 4000, () => {
     console.log("app is listening");
     })
+
