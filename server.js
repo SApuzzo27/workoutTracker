@@ -16,6 +16,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+
+const uri = process.env.MONGODB_URI;
 const databaseUrl = "workouts_db";
 const collections = ["workouts"];
 
