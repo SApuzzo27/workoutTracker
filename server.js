@@ -19,30 +19,17 @@ app.use(express.static("public"));
 const databaseUrl = "workouts_db";
 const collections = ["workouts"];
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true , useFindAndModify : false});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true , useFindAndModify : false});
 
-// mongoose.connect(
-//     process.env.MONGODB_URI || 'mongodb://localhost/workout',
-//     {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//         useCreateIndex: true,
-//         useFindAndModify: false
-//     }
-//     );
-
-    const MongoClient = require('mongodb').MongoClient;
-    const uri = "mongodb+srv://samantha:Mantha515!@cluster0.jrk69.mongodb.net/"+ databaseUrl + collections +"?retryWrites=true&w=majority";
-    const client = new MongoClient(uri, { useNewUrlParser: true });
-    client.connect(err => {
-        const collection = client.db("test").collection("devices");
-      // perform actions on the collection object
-        client.close();
-    });
-
-
-
-
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
+    );
 
 
 // Routes
