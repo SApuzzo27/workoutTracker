@@ -21,7 +21,7 @@ const uri = process.env.MONGODB_URI;
 const databaseUrl = "workouts_db";
 const collections = ["workouts"];
 
-mongoose.connect(uri || "mongodb://localhost/workout", { useNewUrlParser: true , useFindAndModify : false});
+// mongoose.connect(uri || "mongodb://localhost/workout", { useNewUrlParser: true , useFindAndModify : false});
 
 mongoose.connect(
     uri || 'mongodb://localhost/workout',
